@@ -2,6 +2,7 @@
 
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
+[![CI](https://github.com/NihadDjafaroff/file-integrity-monitor/actions/workflows/tests.yml/badge.svg)](https://github.com/NihadDjafaroff/file-integrity-monitor/actions/workflows/tests.yml)
 ![Tests](https://img.shields.io/badge/tests-107%20passing-brightgreen)
 ![Deps](https://img.shields.io/badge/deps-pyyaml%20(watchdog%20optional)-lightgrey)
 
