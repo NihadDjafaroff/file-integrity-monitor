@@ -1,0 +1,34 @@
+# Example configuration - copy to fim.yaml and adjust.
+# Relative paths below are resolved against this file's directory.
+
+paths:
+  - path: /etc
+    exclude: ["*.bak", "mtab"]        # per-path gitignore-style excludes
+  - path: ~/.ssh
+  - path: /var/www
+    include: ["*.php", "*.html"]      # only monitor matching files under this path
+
+hash_algorithm: sha256                # sha256 (default) | sha512 | md5 (legacy/speed only)
+
+# Added on top of the built-in defaults (*.swp, ~*, *.tmp, .DS_Store, Thumbs.db ...)
+ignore:
+  - "*.log"
+  - "cache/"
+use_default_ignore: true
+
+# Added on top of the built-in critical list (passwd, shadow, sudoers, cron, authorized_keys, ...)
+critical_paths:
+  - /etc/myapp/secrets.conf
+  - "~/.bashrc"
+use_default_critical: true
+
+# State lives here: baseline.json, snapshots/, quarantine/
+state_dir: .fim
+# The HMAC key. Keep it OUTSIDE state_dir and outside any monitored path, ideally
+# on a different volume / account than the files it protects. Default: ~/.fim/fim.key
+# key_file: ~/.fim/fim.key
+
+snapshot_on_scan: changes             # changes (default) | always | never
+interval: 30                          # seconds, for `fim watch`
+log_file: alerts.jsonl                # optional JSON-lines alert log
+# quarantine_dir: .fim/quarantine     # used only with --enable-response

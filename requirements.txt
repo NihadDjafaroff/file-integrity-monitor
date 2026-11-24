@@ -1,0 +1,4 @@
+pyyaml>=6.0
+pytest>=7.0
+# Optional: only needed for `fim watch --mode events` (polling works without it)
+watchdog>=3.0

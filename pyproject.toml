@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fim"
+version = "1.0.0"
+description = "A small File Integrity Monitor with HMAC-signed baselines"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = ["pyyaml>=6.0"]
+
+[project.optional-dependencies]
+events = ["watchdog>=3.0"]
+test = ["pytest>=7.0"]
+
+[project.scripts]
+fim = "fim.cli:main"
+
+[tool.setuptools]
+packages = ["fim"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

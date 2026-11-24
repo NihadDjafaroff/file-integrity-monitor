@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# fim runtime state - never commit baselines, snapshots, quarantined files or keys
+.fim/
+fim-state/
+*.key
+fim.yaml
+alerts.jsonl
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
